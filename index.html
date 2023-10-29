@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webBuilder</title>
+    <link rel="stylesheet" href="assets/src/css/style.css?ver=<?php echo time(); ?>">
+    <link rel="stylesheet" href="assets/src/css/fontawesome/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .mobileView {
+            margin-top: 25px;
+            margin-bottom: 25px;
+            width: 414px;
+            height: 736px;
+            border: 1px solid black;
+        }
+
+        .tabletView {
+            margin-top: 25px;
+            margin-bottom: 25px;
+            width: 768px;
+            height: 1024px;
+            border: 1px solid black;
+        }
+
+        .desktopView {
+            width: 100%;
+            height: 890px;
+            border: 3px solid black;
+        }
+
+
+        .contentAreaMobileAndTabView {
+            background-color: #242424;
+            display: flex;
+            justify-content: center;
+        }
+
+        .contentAreaDesktopView {
+            background-color: #242424;
+            height: 100%;
+            padding: 6px 6px;
+        }
+
+        .btn-active {
+            background-color: #2566a9;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="responsive-navigation-section">
+        <button class="btn-responsive-navigation desktopViewBtn btn-active" data-type="desktop"><i
+                    class="fas fa-desktop"></i></button>
+        <button class="btn-responsive-navigation tabletViewBtn" data-type="tablet"><i class="fas fa-tablet-alt"></i>
+        </button>
+        <button class="btn-responsive-navigation mobileViewBtn" data-type="mobile"><i class="fas fa-mobile-alt"></i>
+        </button>
+    </div>
+    <div class="branding-section">
+        <center><img src="assets/images/logo.png" style="max-height: 30px"></center>
+    </div>
+    <div class="main-navigation-section">
+        <div class="main-nav-left">
+            <div class="left-box">
+                <button class="btn-main-navigation"><i class="fas fa-eye"></i></button>
+                <button class="btn-main-navigation"><i class="fas fa-undo"></i></button>
+                <button class="btn-main-navigation"><i class="fas fa-redo"></i></button>
+                <button class="btn-main-navigation"><i class="fas fa-expand-arrows-alt"></i></button>
+            </div>
+            <div class="right-box">
+                <button class="btn-main-navigation"><i class="fas fa-cog"></i></button>
+                <button class="btn-main-navigation"><i class="fas fa-trash-alt"></i></button>
+            </div>
+            <button class="save-box">
+                <i class="fas fa-save"></i> &nbsp;SAVE
+            </button>
+        </div>
+        <div class="main-nav-right control-section">
+            <div class="control-btn edit-control">
+                <i class="far fa-edit"></i>
+            </div>
+            <div class="control-btn blocks-control">
+                <i class="fas fa-th-large"></i>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="side-bar panel">
+    <div class="panel__ctrl">
+        <div class="panel__item">
+            <div class="panel__item--btn">
+                <i class="fas fa-caret-right"></i> Extra
+            </div>
+            <div class="panel__content">
+                <div class="content">
+                    <div class="panel__content--box">
+                        <i class="fas fa-columns"></i>
+                        Slider
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="fas fa-table"></i>
+                        Tabs
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="fas fa-code"></i>
+                        Custom Code
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="far fa-comment-alt"></i>
+                        Tooltip
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="fas fa-text-height"></i>
+                        Typing
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="fas fa-bars"></i>
+                        Navbar
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="far fa-clock"></i>
+                        Timer
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel__item">
+            <div class="panel__item--btn">
+                <i class="fas fa-caret-right"></i> Basic
+            </div>
+            <div class="panel__content">
+                <div class="content">
+                    <div class="panel__content--box">
+                        <i class="fas fa-columns"></i>
+                        Slider
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="fas fa-table"></i>
+                        Tabs
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="fas fa-code"></i>
+                        Custom Code
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="far fa-comment-alt"></i>
+                        Tooltip
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="fas fa-text-height"></i>
+                        Typing
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="fas fa-bars"></i>
+                        Navbar
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="far fa-clock"></i>
+                        Timer
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel__item">
+            <div class="panel__item--btn">
+                <i class="fas fa-caret-right"></i> Forms
+            </div>
+            <div class="panel__content">
+                <div class="content">
+                    <div class="panel__content--box">
+                        <i class="fas fa-columns"></i>
+                        Slider
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="fas fa-table"></i>
+                        Tabs
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="fas fa-code"></i>
+                        Custom Code
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="far fa-comment-alt"></i>
+                        Tooltip
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="fas fa-text-height"></i>
+                        Typing
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="fas fa-bars"></i>
+                        Navbar
+                    </div>
+                    <div class="panel__content--box">
+                        <i class="far fa-clock"></i>
+                        Timer
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel__action">
+        <div class="panel__item">
+            <div class="panel__item--btn">
+                <i class="fas fa-caret-right"></i> General
+            </div>
+            <div class="panel__content">
+                <div class="content">
+                    <div class="action__content--box">
+                        <h5>Display</h5>
+                        <select class="dropdown">
+                            <option>Block</option>
+                            <option>Inline-block</option>
+                        </select>
+                    </div>
+
+                    <div class="action__content--box">
+                        <h5>Position</h5>
+                        <select class="dropdown">
+                            <option>Relative</option>
+                            <option>Absolute</option>
+                        </select>
+                    </div>
+
+                    <div class="action__content--box">
+                        <h5>Top</h5>
+                        <div class="input__group">
+                            <input type="text" value="0" />
+                            <select class="unit">
+                                <option>px</option>
+                                <option>%</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="action__content--box">
+                        <h5>Right</h5>
+                        <div class="input__group">
+                            <input type="text" value="0" />
+                            <select class="unit">
+                                <option>px</option>
+                                <option>%</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="action__content--box">
+                        <h5>Bottom</h5>
+                        <div class="input__group">
+                            <input type="text" value="0" />
+                            <select class="unit">
+                                <option>px</option>
+                                <option>%</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="action__content--box">
+                        <h5>Left</h5>
+                        <div class="input__group">
+                            <input type="text" value="0" />
+                            <select class="unit">
+                                <option>px</option>
+                                <option>%</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel__item">
+            <div class="panel__item--btn">
+                <i class="fas fa-caret-right"></i> Dimention
+            </div>
+            <div class="panel__content">
+                <div class="content">
+                    <div class="action__content--box">
+                        <h5>Width</h5>
+                        <div class="input__group">
+                            <input type="text" value="auto" />
+                            <select class="unit">
+                                <option>px</option>
+                                <option>%</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="action__content--box">
+                        <h5>Height</h5>
+                        <div class="input__group">
+                            <input type="text" value="auto" />
+                            <select class="unit">
+                                <option>px</option>
+                                <option>%</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="action__content--box">
+                        <h5>Max width</h5>
+                        <div class="input__group">
+                            <input type="text" value="auto" />
+                            <select class="unit">
+                                <option>px</option>
+                                <option>%</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="action__content--box">
+                        <h5>Min height</h5>
+                        <div class="input__group">
+                            <input type="text" value="auto" />
+                            <select class="unit">
+                                <option>px</option>
+                                <option>%</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="content__sibling">
+                    <h3 class='title'>Margin</h3>
+                    <div class="content content__child">
+                        <div class="action__content--box">
+                            <h5>Top</h5>
+                            <div class="input__group">
+                                <input type="text" value="0" />
+                                <select class="unit">
+                                    <option>px</option>
+                                    <option>%</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="action__content--box">
+                            <h5>Right</h5>
+                            <div class="input__group">
+                                <input type="text" value="0" />
+                                <select class="unit">
+                                    <option>px</option>
+                                    <option>%</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="action__content--box">
+                            <h5>Bottom</h5>
+                            <div class="input__group">
+                                <input type="text" value="0" />
+                                <select class="unit">
+                                    <option>px</option>
+                                    <option>%</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="action__content--box">
+                            <h5>Left</h5>
+                            <div class="input__group">
+                                <input type="text" value="0" />
+                                <select class="unit">
+                                    <option>px</option>
+                                    <option>%</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content__sibling">
+                    <h3 class='title'>Padding</h3>
+                    <div class="content content__child">
+                        <div class="action__content--box">
+                            <h5>Top</h5>
+                            <div class="input__group">
+                                <input type="text" value="0" />
+                                <select class="unit">
+                                    <option>px</option>
+                                    <option>%</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="action__content--box">
+                            <h5>Right</h5>
+                            <div class="input__group">
+                                <input type="text" value="0" />
+                                <select class="unit">
+                                    <option>px</option>
+                                    <option>%</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="action__content--box">
+                            <h5>Bottom</h5>
+                            <div class="input__group">
+                                <input type="text" value="0" />
+                                <select class="unit">
+                                    <option>px</option>
+                                    <option>%</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="action__content--box">
+                            <h5>Left</h5>
+                            <div class="input__group">
+                                <input type="text" value="0" />
+                                <select class="unit">
+                                    <option>px</option>
+                                    <option>%</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel__item">
+            <div class="panel__item--btn">
+                <i class="fas fa-caret-right"></i> Typography
+            </div>
+            <div class="panel__content">
+                <div class="content">
+                    <div class="action__content--box">
+                        <h5>Font</h5>
+                        <select class="dropdown">
+                            <option>Arial</option>
+                            <option>Arial Black</option>
+                            <option>Helvetica</option>
+                            <option>Roboto</option>
+                        </select>
+                    </div>
+
+                    <div class="action__content--box">
+                        <h5>Font size</h5>
+                        <div class="input__group">
+                            <input type="text" value="16px" />
+                            <select class="unit">
+                                <option>px</option>
+                                <option>%</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="action__content--box">
+                        <h5>Weight</h5>
+                        <select class="dropdown">
+                            <option>Normal</option>
+                            <option>Medium</option>
+                            <option>Bold</option>
+                        </select>
+                    </div>
+
+                    <div class="action__content--box">
+                        <h5>Letter-spacing</h5>
+                        <div class="input__group">
+                            <input type="text" value="0" />
+                            <select class="unit">
+                                <option>px</option>
+                                <option>%</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="action__content--box">
+                        <h5>Font color</h5>
+                        <div class="input__group">
+                            <input type="text" value="#fff" />
+
+                            <input type="color" class="colorPicker" >
+                        </div>
+                    </div>
+
+                    <div class="action__content--box">
+                        <h5>Line height</h5>
+                        <div class="input__group">
+                            <input type="text" value="0" />
+                            <select class="unit">
+                                <option>px</option>
+                                <option>%</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="content single__column">
+                    <div class="action__content--box">
+                        <h5>Text align</h5>
+                        <div class="radio-item">
+                            <div class="radio-group">
+                                <input type="radio" id="left" name="align" value="left">
+                                <label for="left"><i class="fas fa-align-left"></i></label>
+                            </div>
+                            <div class="radio-group">
+                                <input type="radio" id="center" name="align" value="center">
+                                <label for="center"><i class="fas fa-align-center"></i></label>
+                            </div>
+                            <div class="radio-group">
+                                <input type="radio" id="right" name="align" value="right">
+                                <label for="right"><i class="fas fa-align-right"></i></label>
+                            </div>
+                            <div class="radio-group">
+                                <input type="radio" id="justify" name="align" value="justify">
+                                <label for="justify"><i class="fas fa-align-justify"></i></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel__item">
+            <div class="panel__item--btn">
+                <i class="fas fa-caret-right"></i> Decoration
+            </div>
+            <div class="panel__content">
+                <div class="content">
+                    <div class="action__content--box">
+                        <h5>Background color</h5>
+                        <div class="input__group">
+                            <input type="text" value="#fff" />
+
+                            <input type="color" class="colorPicker" >
+                        </div>
+                    </div>
+
+                    <div class="action__content--box">
+                        <h5>Opacity</h5>
+                        <div class="input__group">
+                            <input type="text" value="1" />
+                        </div>
+                    </div>
+                </div>
+                <div class="content__sibling">
+                    <h3 class='title'>Border radius</h3>
+                    <div class="content content__child">
+                        <div class="action__content--box">
+                            <h5>Top</h5>
+                            <div class="input__group">
+                                <input type="text" value="0" />
+                                <select class="unit">
+                                    <option>px</option>
+                                    <option>%</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="action__content--box">
+                            <h5>Right</h5>
+                            <div class="input__group">
+                                <input type="text" value="0" />
+                                <select class="unit">
+                                    <option>px</option>
+                                    <option>%</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="action__content--box">
+                            <h5>Bottom</h5>
+                            <div class="input__group">
+                                <input type="text" value="0" />
+                                <select class="unit">
+                                    <option>px</option>
+                                    <option>%</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="action__content--box">
+                            <h5>Left</h5>
+                            <div class="input__group">
+                                <input type="text" value="0" />
+                                <select class="unit">
+                                    <option>px</option>
+                                    <option>%</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content__sibling">
+                    <h3 class='title'>Border</h3>
+                    <div class="content content__child">
+                        <div class="action__content--box">
+                            <h5>Border width</h5>
+                            <div class="input__group">
+                                <input type="text" value="0" />
+                                <select class="unit">
+                                    <option>px</option>
+                                    <option>%</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="action__content--box">
+                            <h5>Border style</h5>
+                            <div class="input__group">
+                                <select class="dropdown">
+                                    <option>Normal</option>
+                                    <option>Medium</option>
+                                    <option>Bold</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="action__content--box">
+                            <h5>Bottom</h5>
+                            <div class="input__group">
+                                <input type="text" value="0" />
+                                <select class="unit">
+                                    <option>px</option>
+                                    <option>%</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="action__content--box">
+                            <h5>Left</h5>
+                            <div class="input__group">
+                                <input type="text" value="0" />
+                                <select class="unit">
+                                    <option>px</option>
+                                    <option>%</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="contentbox">
+    <div class="content-area contentAreaDesktopView">
+        <div class="page-content desktopView">
+            <iframe allowfullscreen="allowfullscreen" id="viewFrame"
+                    style="border: none; width: 100%; height: 100%; background-color: none">
+            </iframe>
+        </div>
+    </div>
+</section>
+<textarea id="defaultCode" style="display: none">
+       <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Messages</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group input-group">
+          <input type="text" class="form-control" placeholder="Search..">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-sm-3 well">
+      <div class="well">
+        <p><a href="#">My Profile</a></p>
+        <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+      </div>
+      <div class="well">
+        <p><a href="#">Interests</a></p>
+        <p>
+          <span class="label label-default">News</span>
+          <span class="label label-primary">W3Schools</span>
+          <span class="label label-success">Labels</span>
+          <span class="label label-info">Football</span>
+          <span class="label label-warning">Gaming</span>
+          <span class="label label-danger">Friends</span>
+        </p>
+      </div>
+      <div class="alert alert-success fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        <p><strong>Ey!</strong></p>
+        People are looking at your profile. Find out who.
+      </div>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+    </div>
+    <div class="col-sm-7">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default text-left">
+            <div class="panel-body">
+              <p contenteditable="true">Status: Feeling Blue</p>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-thumbs-up"></span> Like
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>John</p>
+           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>Bo</p>
+           <img src="bandmember.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>Jane</p>
+           <img src="bandmember.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>Anja</p>
+           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2 well">
+      <div class="thumbnail">
+        <p>Upcoming Events:</p>
+        <img src="paris.jpg" alt="Paris" width="400" height="300">
+        <p><strong>Paris</strong></p>
+        <p>Fri. 27 November 2015</p>
+        <button class="btn btn-primary">Info</button>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>
+   </textarea>
+
+</body>
+<script src="assets/src/js/app.js?ver=<?php echo time(); ?>"></script>
+<script>
+
+    let defaultCode = $("#defaultCode").val();
+    let frame = document.getElementById('viewFrame');
+    let frameDocument = frame.contentWindow.document;
+
+    frameDocument.open();
+    frameDocument.write(defaultCode);
+    frameDocument.close();
+
+    $(".btn-responsive-navigation").on('click', function () {
+
+        let object = $(this);
+        let selector = $(".btn-responsive-navigation");
+
+        selector.removeClass('btn-active');
+        object.addClass('btn-active');
+
+        let type = object.data('type');
+        let contentAreaDiv = $(".content-area");
+        let pageContentDiv = $(".page-content");
+
+        switch (type) {
+
+            case 'desktop':
+                contentAreaDiv.removeClass('contentAreaMobileAndTabView');
+                contentAreaDiv.addClass('contentAreaDesktopView');
+
+                pageContentDiv.removeClass('mobileView');
+                pageContentDiv.removeClass('tabletView');
+                pageContentDiv.addClass('desktopView');
+
+                break;
+
+            case 'tablet':
+                contentAreaDiv.removeClass('contentAreaDesktopView');
+                contentAreaDiv.addClass('contentAreaMobileAndTabView');
+
+                pageContentDiv.removeClass('desktopView');
+                pageContentDiv.removeClass('mobileView');
+                pageContentDiv.addClass('tabletView');
+
+                break;
+
+            case 'mobile':
+                contentAreaDiv.removeClass('contentAreaDesktopView');
+                contentAreaDiv.addClass('contentAreaMobileAndTabView');
+
+                pageContentDiv.removeClass('desktopView');
+                pageContentDiv.removeClass('tabletView');
+                pageContentDiv.addClass('mobileView');
+
+                break;
+        }
+    });
+</script>
+</html>
